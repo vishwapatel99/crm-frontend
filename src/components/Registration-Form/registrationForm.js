@@ -5,12 +5,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import '../../page/entry/Entry.css'
 
 const initialState = {
-    name: 'Vishwa Patel',
-    address: 'fdnancnc',
-    phone: '9512364877',
-    email: 'email@gmail.com',
-    password: 'Vishw@12',
-    confirmPassword: 'Vishw@12',
+    name: '',
+    address: '',
+    phone: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
 }
 
 const passVerificationError = {

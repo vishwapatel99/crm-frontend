@@ -144,7 +144,8 @@ const RegistrationForm = () => {
                     <Form.Text>
                         {!passwordError.confirmPassword && (
                             <div className='text-danger'>Password doesn't match!!</div>
-                        )}</Form.Text>
+                        )}
+                    </Form.Text>
                     <ul className="mb-4">
                         <li className={passwordError.isLengthy ? "text-success":"text-danger"}>
                             Min 8 characters

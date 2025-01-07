@@ -1,0 +1,98 @@
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Container, Row, Col, Button, Spinner, Alert } from 'react-bootstrap';
+import PageBreadcrumb from '../../components/Breadcrumb/Breadcrumb';
+import MessageHistory from '../../components/MessageHistory/MessageHistory';
+import UpdateTicket from '../../components/Update-Ticket/UpdateTicket';
+// import tickets from "../../assets/data/dummy-tickets.json";
+import './Ticket.css';
+import { useParams } from 'react-router-dom';
+import { closeTicket, fetchSingleTicket } from '../Ticket-List/ticketsAction';
+import { resetResponseMsg } from '../Ticket-List/ticketsSlice';
+
+// const ticket = tickets[0];
+
+const Ticket = () => {
+  const {tId} = useParams();
+  const dispatch = useDispatch();
+  const { isLoading, error, selectedTicket, replyMsg, replyTicketError } = useSelector(state => state.tickets);
+  // const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    dispatch(fetchSingleTicket(tId));
+    // for (let i = 0; i<tickets.length;i++){
+    //   if(tickets[i].id==tId){
+    //     setTicket(tickets[i]);
+    //     continue;
+    //   }
+    // }
+    return () => {
+      (replyMsg || replyTicketError) && dispatch(resetResponseMsg())
+    }
+  }, [tId, dispatch, replyMsg, replyTicketError]);
+
+  // const handleOnChange = (e) => {
+  //   setMessage(e.target.value);
+  // };
+
+  // const handleOnSubmit = (e) => {
+  //   e.preventDefault();
+  //   alert('Form Submitted');
+  // };
+
+  if (isLoading) {
+    return <Spinner variant='primary' animation='border' />;
+  }
+
+  if (error) {
+    return <Alert variant='danger'>{error}</Alert>;
+  }
+
+  if (!selectedTicket) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <Container className="ticket-page">
+      <Row>
+        <Col>
+          <PageBreadcrumb page="Ticket" />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          {isLoading && <Spinner variant='primary' animation='border' />}
+          {error && <Alert variant='danger'>{error}</Alert>}
+          {replyTicketError && <Alert variant='danger'>{replyTicketError}</Alert>}
+          {replyMsg && <Alert variant="success">{replyMsg}</Alert>}
+        </Col>
+      </Row>
+      <Row>
+        <Col className='fw-bold text-secondary'>
+          <div className='subject'>Subject: {selectedTicket.subject}</div>
+          <div className='date'>Opened Date: {selectedTicket.openAt && new Date(selectedTicket.openAt).toLocaleString()}</div>
+          <div className='status'>Status: {selectedTicket.status}</div>
+        </Col>
+        <Col className='text-right'>
+            <Button variant='outline-info' 
+              onClick={() => dispatch(closeTicket(tId))}
+              disabled = {selectedTicket.status === "Closed"}
+            >Close Ticket</Button>
+        </Col>
+      </Row>
+      <Row className="mt-4">
+        <Col>{selectedTicket.conversations && <MessageHistory msg={selectedTicket.conversations} />}  
+        </Col>
+      </Row>
+      <Row className="mt-4">
+        <Col>
+          <UpdateTicket _id = {tId}
+          // msg={message} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} 
+          />
+        </Col>
+      </Row>
+    </Container>
+  );
+};
+
+export default Ticket;

@@ -1,0 +1,13 @@
+.update-ticket-form {
+    margin-top: 20px;
+  }
+  
+  .update-ticket-textarea {
+    border-radius: 5px;
+    resize: none;
+  }
+  
+  .update-ticket-button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }

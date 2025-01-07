@@ -1,0 +1,17 @@
+.ticket-table {
+    margin-top: 20px;
+  }
+  
+  .ticket-table th, .ticket-table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .ticket-table th {
+    background-color: #343a40;
+    color: #ffffff;
+  }
+  
+  .ticket-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }

@@ -1,0 +1,17 @@
+.dashboard {
+    padding: 20px;
+  }
+  
+  .breadcrumb-container {
+    margin-bottom: 20px;
+  }
+  
+  .add-ticket-btn {
+    font-size: 2rem;
+    padding: 10px 30px;
+  }
+  
+  .ticket-info {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }

@@ -1,0 +1,63 @@
+/* Container styling */
+.container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  max-width: 450px;
+  text-align: center;
+  transform: translateY(35%);
+  position: relative;
+  
+}
+
+/* Heading styling */
+.text-dark {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 2rem;
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button styling */
+button[type="submit"] {
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Link styling */
+.text-center a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.text-center a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .col-md-6 {
+    max-width: 90%;
+  }
+}

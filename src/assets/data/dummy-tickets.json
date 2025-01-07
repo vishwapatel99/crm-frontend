@@ -1,0 +1,79 @@
+[
+    {
+       "id": 1,
+       "subject": "Email issue",
+       "status": "client response pending",
+       "addedAt": "2024-10-20",
+       "history": [
+            {
+               "date": "2024-10-20",
+               "message": "omcolmmrfr",
+               "messageBy": "Client"
+            },
+            {
+               "date": "2024-10-20",
+               "message": "omcolmmrfr",
+               "messageBy": "Operator"
+            },
+            {
+               "date": "2024-10-20",  
+               "message": "omcolmmrfr",
+               "messageBy": "Client"
+            }
+         ]
+    },
+    {
+       "id": 2,
+       "subject": "Need to reset my password",
+       "status": "closed",
+       "addedAt": "2024-10-20"
+    },
+    {
+       "id": 3,
+       "subject": "Email issue",
+       "status": "client response pending",
+       "addedAt": "2024-10-20"
+    },
+    {
+       "id": 4,
+       "subject": "Need to reset my password",
+       "status": "closed",
+       "addedAt": "2024-10-20"
+    },
+    {
+       "id": 5,
+       "subject": "Need to reset my password",
+       "status": "client response pending",
+       "addedAt": "2024-10-20"
+    },
+    {
+       "id": 6,
+       "subject": "Need to reset my password",
+       "status": "closed",
+       "addedAt": "2024-10-20"
+    },
+    {
+       "id": 7,
+       "subject": "Need to reset my password",
+       "status": "client response pending",
+       "addedAt": "2024-10-20"
+    },
+    {
+       "id": 8,
+       "subject": "Need to reset my password",
+       "status": "closed",
+       "addedAt": "2024-10-20"
+    },
+    {
+       "id": 9,
+       "subject": "Need to reset my password",
+       "status": "client response pending",
+       "addedAt": "2024-10-20"
+    },
+    {
+       "id": 10,
+       "subject": "Need to reset my password",
+       "status": "closed",
+       "addedAt": "2024-10-20"
+    }
+]

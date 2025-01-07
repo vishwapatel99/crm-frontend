@@ -1,0 +1,23 @@
+.custom-navbar {
+  background-color: #343a40;
+}
+
+.custom-navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.custom-nav {
+  margin-left: auto;
+}
+
+.custom-nav-link {
+  color: #ffffff;
+  margin-right: 1rem;
+  text-decoration: none; /* Remove underline */
+}
+
+.custom-nav-link:hover {
+  color: #adb5bd;
+  text-decoration: none; /* Remove underline on hover */
+}

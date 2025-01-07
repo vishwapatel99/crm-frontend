@@ -1,0 +1,18 @@
+.ticket-page {
+    padding: 20px;
+  }
+  
+  .subject, .date, .status {
+    margin-bottom: 10px;
+  }
+  
+  .fw-bold {
+    font-weight: bold;
+  }
+  
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+  .text-right {
+    text-align: right;
+  }

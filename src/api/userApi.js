@@ -6,6 +6,15 @@ const userProfileUrl = rootUrl + 'users'
 const logoutUrl = rootUrl + 'users/logout'
 const refreshTokenUrl = rootUrl + 'tokens'
 
+export const userRegistration = async (frmData) => {
+    try {
+        const res = await axios.post(userProfileUrl, frmData);
+        return res.data;
+    } catch (error) {
+        console.error('Error during user login:', error);
+        throw error;
+    }
+};
 export const userLogin = async (frmData) => {
     try {
         const res = await axios.post(loginUrl, frmData);

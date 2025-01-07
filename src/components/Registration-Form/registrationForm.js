@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from 'react'
-import { Container, Row, Col, Form, Button } from 'react-bootstrap'
+import { Container, Row, Col, Form, Button, Spinner, Alert } from 'react-bootstrap'
+import { newUserRegistration } from './userRegistrationAction'
+import { useDispatch, useSelector } from 'react-redux'
 import '../../page/entry/Entry.css'
 
 const initialState = {
-    name: '',
-    company: '',
-    address: '',
-    phone: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    name: 'Vishwa Patel',
+    address: 'fdnancnc',
+    phone: '9512364877',
+    email: 'email@gmail.com',
+    password: 'Vishw@12',
+    confirmPassword: 'Vishw@12',
 }
 
 const passVerificationError = {
@@ -23,8 +24,11 @@ const passVerificationError = {
 
 const RegistrationForm = () => {
 
+    const dispatch = useDispatch()
     const [newUser, setNewUser] = useState(initialState)
     const [passwordError, setPasswordError] = useState(passVerificationError)
+
+    const { isLoading, status, message } = useSelector(state => state.registration)
 
     useEffect(()=>{},[newUser])
 
@@ -50,7 +54,8 @@ const RegistrationForm = () => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
-        console.log(newUser);
+        // console.log(newUser);
+        dispatch(newUserRegistration(newUser))
     }
     
   return (
@@ -63,7 +68,7 @@ const RegistrationForm = () => {
         <hr />
         <Row>
             <Col>
-                {/* {message && (<Alert variant={status === "success" ? "success" : "danger"}>{message}</Alert>)} */}
+                {message && (<Alert variant={status === "success" ? "success" : "danger"}>{message}</Alert>)}
             </Col>
         </Row>
 
@@ -80,7 +85,7 @@ const RegistrationForm = () => {
                             placeholder="Enter Name"
                             required />
                     </Form.Group>
-                    <Form.Group className="mb-3">
+                    {/* <Form.Group className="mb-3">
                         <Form.Label>Company Name</Form.Label>
                         <Form.Control 
                             type="text" 
@@ -89,7 +94,7 @@ const RegistrationForm = () => {
                             onChange={handleOnChange} 
                             placeholder="Enter Company Name"
                             required />
-                    </Form.Group>
+                    </Form.Group> */}
                     <Form.Group className="mb-3">
                         <Form.Label>Address</Form.Label>
                         <Form.Control 
@@ -166,6 +171,8 @@ const RegistrationForm = () => {
                     <Button variant="primary" type="submit" disabled={Object.values(passwordError).includes(false)}>
                         Submit
                     </Button>
+                    {isLoading && <Spinner variant='info' animation='border'/>}
+                    
                 </Form>
             </Col>
         </Row>

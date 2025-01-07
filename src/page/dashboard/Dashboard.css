@@ -9,6 +9,7 @@
   .add-ticket-btn {
     font-size: 2rem;
     padding: 10px 30px;
+    max-width: fit-content;
   }
   
   .ticket-info {

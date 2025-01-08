@@ -55,7 +55,21 @@ const RegistrationForm = () => {
     const handleOnSubmit = (e) => {
         e.preventDefault()
         // console.log(newUser);
-        dispatch(newUserRegistration(newUser))
+        const {
+            name,
+            address,
+            phone,
+            email,
+            password
+        } = newUser
+        const newRegistration = {
+            name,
+            address,
+            phone,
+            email,
+            password
+        }
+        dispatch(newUserRegistration(newRegistration))
     }
     
   return (

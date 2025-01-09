@@ -47,6 +47,7 @@ import AddTicket from './page/new-ticket/AddTicket';
 import TicketLists from './page/Ticket-List/TicketList';
 import Ticket from './page/ticket/Ticket';
 import PrivateRoute from './components/private-route/PrivateRoute';
+import UserVerification from './page/user-verification/UserVerification';
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Entry />} />
           <Route path='/registration' element={<Registration />} />
+          <Route path='/verification/:_id/:email' element={<UserVerification />} />
           <Route path='/dashboard' element={<PrivateRoute><Dashboard /></PrivateRoute>} />
           <Route path='/add-ticket' element={<PrivateRoute><AddTicket /></PrivateRoute>} />
           <Route path='/ticket-list' element={<PrivateRoute><TicketLists /></PrivateRoute>} />

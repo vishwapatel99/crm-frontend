@@ -5,6 +5,7 @@ const loginUrl = rootUrl + 'users/login'
 const userProfileUrl = rootUrl + 'users'
 const logoutUrl = rootUrl + 'users/logout'
 const refreshTokenUrl = rootUrl + 'tokens'
+const userVerificationUrl = userProfileUrl + "/verify"
 
 export const userRegistration = async (frmData) => {
     try {
@@ -15,6 +16,32 @@ export const userRegistration = async (frmData) => {
         throw error;
     }
 };
+
+// export const userRegistrationVerification = async (frmData) => {
+//     return new Promise(async (resolve, reject) => {
+//         try {
+//           const res = await axios.patch(userVerificationUrl, frmData);
+    
+//           resolve(res.data);
+//           if (res.data.status === "success") {
+//             resolve(res.data);
+//           }
+//         } catch (error) {
+//           reject({ status: "error", message: error.error });
+//         }
+//     });
+// };
+
+export const userRegistrationVerification = async (frmData) => {
+    try {
+        const res = await axios.patch(userVerificationUrl, frmData);
+        return res.data;
+    } catch (error) {
+        console.error("Verification API error:", error.response?.data || error.message);
+        throw { status: "error", message: error.response?.data?.message || "Verification failed." };
+    }
+};
+
 export const userLogin = async (frmData) => {
     try {
         const res = await axios.post(loginUrl, frmData);

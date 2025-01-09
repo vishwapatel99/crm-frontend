@@ -30,7 +30,7 @@ body {
   }
   
   /* Page Containers */
-  .entry-page, 
+  .entry-page, .verification-page, 
   .registration-page {
     display: flex;
     justify-content: center;

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import TicketTable from '../../components/TicketTable/TicketTable';
-// import tickets from '../../assets/data/dummy-tickets.json';
 import PageBreadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import './Dashboard.css';
 import { Link } from 'react-router-dom'

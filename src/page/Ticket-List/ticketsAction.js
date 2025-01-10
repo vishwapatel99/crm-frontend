@@ -45,11 +45,7 @@ export const replyOnTicket = (_id, msgObj) => async (dispatch) => {
         }
 
         dispatch(fetchSingleTicket(_id))
-        // if (result.data.result) {
         dispatch(replyTicketSuccess(result.message));
-        // } else {
-        //   dispatch(fetchSingleTicketFail('No ticket found'));
-        // }
     } catch (error) {
         console.log(error.message);
         dispatch(replyTicketFail(error.message));

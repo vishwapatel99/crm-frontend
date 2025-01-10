@@ -38,7 +38,7 @@ const RegistrationForm = () => {
         setNewUser({...newUser, [name]:value})
 
         if(name === "password"){
-            const isLengthy = value.length>=8
+            const isLengthy = value.length>7
             const hasUpper = /[A-Z]/.test(value)
             const hasLower = /[a-z]/.test(value)
             const hasNumber = /[0-9]/.test(value)
@@ -54,7 +54,6 @@ const RegistrationForm = () => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
-        // console.log(newUser);
         const {
             name,
             address,

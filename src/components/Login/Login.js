@@ -20,8 +20,8 @@ const Login = ({ formSwitcher }) => {
     }
   }, [isAuth, navigate]);
 
-  const [email, setEmail] = useState("vishwapatel@gmail.com");
-  const [password, setPassword] = useState("password");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -34,18 +34,7 @@ const Login = ({ formSwitcher }) => {
       if (!email || !password) {
         return alert("Please fill up the form");
       }
-      // setIsLoading(true);
-      // try {
-      //   // Simulate login API call
-      //   setTimeout(() => {
-      //     setIsLoading(false);
-      //     setError("");
-      //     // Navigate to dashboard or perform other actions
-      //   }, 2000);
-      // } catch (error) {
-      //   setIsLoading(false);
-      //   setError("Login failed");
-      // }
+      
       dispatch(loginPending());
       try {
         const isAuth = await userLogin({ email, password });
@@ -98,7 +87,7 @@ const Login = ({ formSwitcher }) => {
             {isLoading && <Spinner variant="primary" animation="border" />}
             </Form.Group>
             <Form.Text className="text-center">
-              <a href="#!" onClick={() => formSwitcher('reset')}>Forgot Password?</a>
+              <a href="/password-reset">Forgot Password?</a>
             </Form.Text>
             <Form.Text className="text-center">
               <br/>Are you new here?

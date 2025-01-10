@@ -7,7 +7,6 @@ export const openNewTicket = (frmData) => (dispatch) => {
     try {
       dispatch(openNewTicketPending());
 
-      ////call api
       const result = await createNewTicket(frmData);
       if (result.status === "error") {
         return dispatch(openNewTicketFail(result.message));

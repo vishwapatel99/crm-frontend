@@ -24,10 +24,8 @@ const Entry = () => {
       )}
       {formLoad === 'reset' && (
         <ForgotPassword
-          // handleOnChange={handleOnChange}
           handleOnResetSubmit={handleOnResetSubmit}
           formSwitcher={formSwitcher}
-          // email={email}
         />
       )}
       </div>

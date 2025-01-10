@@ -14,10 +14,10 @@
 .custom-nav-link {
   color: #ffffff;
   margin-right: 1rem;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none; 
 }
 
 .custom-nav-link:hover {
   color: #adb5bd;
-  text-decoration: none; /* Remove underline on hover */
+  text-decoration: none; 
 }

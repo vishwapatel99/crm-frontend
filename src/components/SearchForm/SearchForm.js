@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Form, Row, Col } from 'react-bootstrap';
-// import PropTypes from 'prop-types';
 import { filterSearchTicket } from '../../page/Ticket-List/ticketsAction';
 import './SearchForm.css';
 
@@ -21,7 +20,6 @@ const SearchForm = () => {
           <Col xs="12" sm="10">
             <Form.Control
               name="searchStr"
-              // value={str}
               onChange={handleOnChange}
               placeholder="Search"
               className="search-input"
@@ -32,10 +30,5 @@ const SearchForm = () => {
     </div>
   );
 };
-
-// SearchForm.propTypes = {
-//   handleOnChange: PropTypes.func.isRequired,
-//   str: PropTypes.string.isRequired,
-// };
 
 export default SearchForm;

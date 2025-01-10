@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { openNewTicket } from './AddTicketAction';
 import { Form, Button, Row, Col, Spinner, Alert } from 'react-bootstrap';
-// import PropTypes from 'prop-types';
 import { shortText } from "../../utils/validation";
 import { resetSuccessMSg } from './AddTicketSlice';
 import './AddTicketForm.css';
@@ -55,12 +54,6 @@ const AddTicketForm = () => {
       dispatch(openNewTicket({ subject, issueDate, message, sender: name }));
       console.log("Form submitted", frmData);
     }
-
-    // dispatch(openNewTicket({...frmData, sender: name}))
-    // if (isSubjectValid) {
-    //   // Submit the form
-    //   
-    // }
   };
 
   return (
@@ -79,7 +72,6 @@ const AddTicketForm = () => {
             <Form.Control
               name="subject"
               value={frmData.subject}
-            //   minLength={4}
               onChange={handleOnChange}
               placeholder='Subject'
               required
@@ -118,12 +110,5 @@ const AddTicketForm = () => {
     </div>
   );
 }
-
-// AddTicketForm.propTypes = {
-//   handleOnSubmit: PropTypes.func.isRequired,
-//   handleOnChange: PropTypes.func.isRequired,
-//   frmData: PropTypes.object.isRequired,
-//   frmDataError: PropTypes.object.isRequired,
-// };
 
 export default AddTicketForm;

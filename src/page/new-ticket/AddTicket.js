@@ -13,12 +13,7 @@ const AddTicket = () => {
             </Row>
             <Row>
                 <Col>
-                    <AddTicketForm
-                        // handleOnSubmit={handleOnSubmit}
-                        // handleOnChange={handleOnChange}
-                        // frmDt={frmData}
-                        // frmDataError={frmDataError}
-                    />
+                    <AddTicketForm />
                 </Col>
             </Row>
         </Container>

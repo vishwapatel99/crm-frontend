@@ -6,8 +6,6 @@ import { replyOnTicket } from '../../page/Ticket-List/ticketsAction';
 import './UpdateTicket.css';
 
 const UpdateTicket = ({_id}) => {
-
-  // const { replyMsg } = useSelector(state => state.tickets);
   const dispatch = useDispatch();
   const { user:{name} } = useSelector(state => state.user);
   const [message, setMessage] = useState('');

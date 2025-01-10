@@ -4,41 +4,23 @@ import { Container, Row, Col, Button, Spinner, Alert } from 'react-bootstrap';
 import PageBreadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import MessageHistory from '../../components/MessageHistory/MessageHistory';
 import UpdateTicket from '../../components/Update-Ticket/UpdateTicket';
-// import tickets from "../../assets/data/dummy-tickets.json";
 import './Ticket.css';
 import { useParams } from 'react-router-dom';
 import { closeTicket, fetchSingleTicket } from '../Ticket-List/ticketsAction';
 import { resetResponseMsg } from '../Ticket-List/ticketsSlice';
 
-// const ticket = tickets[0];
-
 const Ticket = () => {
   const {tId} = useParams();
   const dispatch = useDispatch();
   const { isLoading, error, selectedTicket, replyMsg, replyTicketError } = useSelector(state => state.tickets);
-  // const [message, setMessage] = useState('');
-
+ 
   useEffect(() => {
     dispatch(fetchSingleTicket(tId));
-    // for (let i = 0; i<tickets.length;i++){
-    //   if(tickets[i].id==tId){
-    //     setTicket(tickets[i]);
-    //     continue;
-    //   }
-    // }
+    
     return () => {
       (replyMsg || replyTicketError) && dispatch(resetResponseMsg())
     }
   }, [tId, dispatch, replyMsg, replyTicketError]);
-
-  // const handleOnChange = (e) => {
-  //   setMessage(e.target.value);
-  // };
-
-  // const handleOnSubmit = (e) => {
-  //   e.preventDefault();
-  //   alert('Form Submitted');
-  // };
 
   if (isLoading) {
     return <Spinner variant='primary' animation='border' />;
@@ -86,9 +68,7 @@ const Ticket = () => {
       </Row>
       <Row className="mt-4">
         <Col>
-          <UpdateTicket _id = {tId}
-          // msg={message} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} 
-          />
+          <UpdateTicket _id = {tId} />
         </Col>
       </Row>
     </Container>

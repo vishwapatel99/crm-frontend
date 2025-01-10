@@ -1,4 +1,3 @@
-/* Page Styles */
 .registration-page {
     display: flex;
     justify-content: center;
@@ -6,7 +5,7 @@
     width: 100vw;
     height: 100vh;
     background-color: #343a40;
-    overflow: hidden; /* Prevents unexpected overflow */
+    overflow: hidden; 
   }
   
   .form-box {
@@ -15,15 +14,14 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 500px;
     width: 100%;
-    height: 90vh; /* Adjusts the container to take up 90% of the viewport height */
+    height: 90vh; 
     padding: 20px;
-    overflow-y: auto; /* Ensures the form is scrollable if content overflows */
+    overflow-y: auto; 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
   
-  /* Hide scrollbar for modern browsers */
   .form-box::-webkit-scrollbar {
     width: 8px;
   }
@@ -37,19 +35,17 @@
     background: #555;
   }
   
-  /* Typography */
   h1.label {
     font-size: 24px;
     font-weight: bold;
     color: #343a40;
     text-align: center;
     margin-bottom: 20px;
-    margin-top: 0; /* Ensures there’s no extra margin that pushes it out */
-    line-height: 1.5; /* Improves text spacing for readability */
-    word-wrap: break-word; /* Ensures long text doesn’t overflow */
+    margin-top: 0; 
+    line-height: 1.5; 
+    word-wrap: break-word; 
   }
   
-  /* Form Styles */
   .form-box .form-label {
     font-weight: bold;
     color: #343a40;
@@ -68,19 +64,6 @@
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
   
-  /* Password Criteria List */
-  /* ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0;
-  }
-  
-  ul li {
-    font-size: 14px;
-    color: #dc3545;
-  } */
-  
-  /* Button Styles */
   button[type="submit"] {
     background-color: #007bff;
     border: none;
@@ -98,17 +81,15 @@
     background-color: #0056b3;
   }
   
-  /* Divider */
   hr {
     border: 1px solid #dee2e6;
     margin: 20px 0;
   }
   
-  /* Responsive Design */
   @media (max-width: 576px) {
     .form-box {
       padding: 15px;
-      height: 95vh; /* Slightly increase height for smaller screens */
+      height: 95vh; 
     }
   
     h1.label {

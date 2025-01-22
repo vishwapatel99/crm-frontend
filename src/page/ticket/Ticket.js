@@ -56,7 +56,7 @@ const Ticket = () => {
           <div className='status'>Status: {selectedTicket.status}</div>
         </Col>
         <Col className='text-right'>
-            <Button variant='outline-info' 
+            <Button variant='outline-danger' 
               onClick={() => dispatch(closeTicket(tId))}
               disabled = {selectedTicket.status === "Closed"}
             >Close Ticket</Button>
